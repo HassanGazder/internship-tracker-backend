@@ -13,7 +13,7 @@ const {
   deleteApplication,
 } = require("../controllers/applicationController");
 
-const { protect } = require("../middleware/authmiddleware");
+const { protect } = require("../middleware/authMiddleware");
 // ↑ Update this path if your auth middleware file is named differently
 
 // Apply "protect" to all routes in this file

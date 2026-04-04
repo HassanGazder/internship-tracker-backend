@@ -7,6 +7,7 @@ const applicationRoutes = require("./routes/applicationroutes");
 const interviewRoutes = require("./routes/interviewRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const alertRoutes = require("./routes/alertRoutes");
+const exportRoutes = require("./routes/exportRoutes");
 
 dotenv.config();
 connectDB();
@@ -22,6 +23,7 @@ app.use("/api/applications", applicationRoutes);
 app.use("/api/interviews", interviewRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/alerts", alertRoutes);
+app.use("/api/export", exportRoutes);
 
 
 // Test Route

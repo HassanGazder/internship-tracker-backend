@@ -8,7 +8,7 @@ const {
   deleteInterview,
 } = require("../controllers/interviewController");
 
-const { protect } = require("../middleware/authmiddleware");
+const { protect } = require("../middleware/authMiddleware");
 
 router.route("/").post(protect, createInterview).get(protect, getInterviews);
 
