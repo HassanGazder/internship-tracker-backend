@@ -79,7 +79,28 @@ const loginUser = async (req, res) => {
   }
 };
 
+// @desc Get current logged-in user
+// @route GET /api/auth/me
+// @access Private
+const getMe = async (req, res) => {
+  try {
+    if (!req.user) {
+      return res.status(401).json({ message: "Not authorized" });
+    }
+
+    res.status(200).json({
+      _id: req.user._id,
+      name: req.user.name,
+      email: req.user.email,
+      university: req.user.university,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
+  getMe,
 };
